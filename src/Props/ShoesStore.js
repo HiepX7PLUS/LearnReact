@@ -35,7 +35,11 @@ export default class ShoesStore extends Component {
             </div>
             <div className="col-9 tab-content" id="tabContent">
               <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <h4>DANH SÁCH SẢN PHẨM</h4>
+                
+                <div className='row mb-5'>
+                  <div className='col-md-10'><h4>DANH SÁCH SẢN PHẨM</h4></div>
+                  <div className='col-md-2 text-right'> <button type='button' className='btn btn-light'>Đơn hàng <i className="fas fa-cart-arrow-down"></i> </button> </div>
+                </div>
                 <ModalShoesItem contentShoes={this.stateShoes.shoesDetail} />
                 <ShoesList arrProduct={arrDataShoes} xemChiTiet={this.xemChiTiet} />
                 
