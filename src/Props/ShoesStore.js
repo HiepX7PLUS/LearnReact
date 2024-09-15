@@ -6,7 +6,7 @@ import ModalShoesCart from './ModalShoesCart'
 
 export default class ShoesStore extends Component {
 
-  stateShoes = {
+  state = {
     shoesDetail : {
       "id": 1,
       "name": "Adidas Prophere",
@@ -39,11 +39,11 @@ export default class ShoesStore extends Component {
                 
                 <div className='row mb-5'>
                   <div className='col-md-9'><h4>DANH SÁCH SẢN PHẨM</h4></div>
-                  <div className='col-md-3 text-end'> <button type='button' className='btn btn-light' style={{cursor:'pointer'}}  data-bs-toggle="modal" data-bs-target="#modelCart"> Đơn hàng (0 sp) <i class="fas fa-caret-square-down"></i> </button> </div>
+                  <div className='col-md-3 text-end'> <button type='button' className='btn btn-light' style={{cursor:'pointer'}}  data-bs-toggle="modal" data-bs-target="#modelCart"> Đơn hàng (0 sp) <i className="fas fa-caret-square-down"></i> </button> </div>
                 </div>
 
                 <ShoesList arrProduct={arrDataShoes} xemChiTiet={this.xemChiTiet} />
-                <ModalShoesItem contentShoes={this.stateShoes.shoesDetail} />
+                <ModalShoesItem contentShoes={this.state.shoesDetail} />
                 <ModalShoesCart/>
                 
               </div>

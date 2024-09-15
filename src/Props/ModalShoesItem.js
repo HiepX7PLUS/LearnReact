@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class ModalShoesItem extends Component {
   render() {
+    let {contentShoes} = this.props;
     return (
         <div>
             {/* Button trigger modal */}
@@ -13,11 +14,33 @@ export default class ModalShoesItem extends Component {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="modalDetailShoesLabel"> {this.props.contentShoes.name} </h5>
+                            <h5 className="modal-title" id="modalDetailShoesLabel"> {contentShoes.name} </h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                         </div>
                         <div className="modal-body text-center">
-                            <img src={this.props.contentShoes.image} alt={this.props.contentShoes.name} style={{height:'300px'}} />
+                            <img src={contentShoes.image} alt={contentShoes.name} style={{height:'250px'}} />
+                            <div className='row text-start ms-2 mb-5 me-2'>
+                                <table className="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">ID</th>
+                                            <td> {contentShoes.id} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Price</th>
+                                            <td> $ {contentShoes.price.toLocaleString()} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Số lượng</th>
+                                            <td> {contentShoes.quantity} </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Mô tả</th>
+                                            <td> {contentShoes.description} </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
