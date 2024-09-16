@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 
 export default class ModalShoesItem extends Component {
   render() {
+    // Nhận dữ liệu từ ShoesStore
     let {contentShoes} = this.props;
+
     return (
         <div>
             {/* Button trigger modal */}
@@ -13,7 +15,7 @@ export default class ModalShoesItem extends Component {
             <div className="modal fade" id="modalDetailShoes" tabIndex={-1} aria-labelledby="modalDetailShoesLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
-                        <div className="modal-header">
+                        <div className="modal-header bg-light">
                             <h5 className="modal-title" id="modalDetailShoesLabel"> {contentShoes.name} </h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                         </div>
@@ -42,10 +44,11 @@ export default class ModalShoesItem extends Component {
                                 </table>
                             </div>
                         </div>
-                        <div className="modal-footer">
+                        {/* <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" className="btn btn-primary">Save changes</button>
-                        </div>
+                        </div> */}
+
                     </div>
                 </div>
             </div>

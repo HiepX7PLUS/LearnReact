@@ -16,13 +16,46 @@ export default class ShoesStore extends Component {
       "shortDescription": "The midsole contains 20% more Boost for an amplified Boost feeling.\r\n\r\n",
       "quantity": 995,
       "image": "http://svcy3.myclass.vn/images/adidas-prophere.png"
-    }
+    }, 
+    shoesCart: []
   }
+
+  // Hàm xử lý khi bấm Xem chi tiết
   xemChiTiet = (newShoes) => {
     this.setState(
       {shoesDetail : newShoes},
       ()=>{console.log(newShoes)}
     )
+  }
+
+  // Xử lý khi Bấm Add to Cart
+  addToCart = (spShoes) => {
+    console.log(spShoes)
+    // alert("Đã thêm vào Đơn hàng")
+    // Mỗi một lần click, hàm này sẽ nhận về một sản phẩm.
+    // Hàm này khác với hàm xemChiTiet ở chỗ: Hàm này phải lưu lại những sản phẩm đã click, tức là một mảng gồm các object Sản phẩm đã click chứ không chỉ là 1 sản phẩm như hàm xemChiTiet.
+    // Có 2 cách để xử lý:
+    // - Cách 1: Tạo một mảng các sản phẩm đã click, rồi setState cho state.shoesCart ban đầu chính là cái mảng đó.
+    // - Cách 2: Nhận được sản phẩm đã click nào thì ta push thẳng vào thằng state.shoesCart đang ở trong Giỏ hàng, rồi setState cho state.shoesCart
+
+    // Tạo một biến object để nhận một số giá trị cần thiết cho Sản phẩm trong giỏ hàng từ Sản phẩm click vào.
+    let shoesAdapter = {
+      maSP : spShoes.id,
+      hinhAnh: spShoes.image,
+      tenSP: spShoes.name,
+      soLg: 1,
+      donGia: spShoes.price
+    }
+
+    // Cách 1: 
+    let arrCart = [...this.state.shoesCart, shoesAdapter];
+    this.setState({shoesCart: arrCart})
+
+    // // Cách 2:
+    // this.state.shoesCart.push(shoesAdapter)
+    // this.setState({shoesCart: this.state.shoesCart})
+
+    
   }
 
   render() {
@@ -42,9 +75,9 @@ export default class ShoesStore extends Component {
                   <div className='col-md-3 text-end'> <button type='button' className='btn btn-light' style={{cursor:'pointer'}}  data-bs-toggle="modal" data-bs-target="#modelCart"> Đơn hàng (0 sp) <i className="fas fa-caret-square-down"></i> </button> </div>
                 </div>
 
-                <ShoesList arrProduct={arrDataShoes} xemChiTiet={this.xemChiTiet} />
+                <ShoesList arrDataShoes={arrDataShoes} xemChiTiet={this.xemChiTiet} addToCart={this.addToCart} />
                 <ModalShoesItem contentShoes={this.state.shoesDetail} />
-                <ModalShoesCart/>
+                <ModalShoesCart shoesCart={this.state.shoesCart} />
                 
               </div>
               <div className="tab-pane fade" id="product" role="tabpanel" aria-labelledby="v-pills-product-tab">
