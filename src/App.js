@@ -1,10 +1,14 @@
 import './App.css';
-import ShoesStore from './Props/ShoesStore';
+import ShoesStoreRedux from './BaiTapRedux/ShoesStoreRedux';
+// import ShoesStore2 from './BaiTapProps/ShoesStore2';
+// import ShoesStore from './Props/ShoesStore';
 
 function App() {
   return (
     <div>
-      <ShoesStore/>
+      {/* <ShoesStore/> */}
+      {/* <ShoesStore2/> */}
+      <ShoesStoreRedux/>
     </div>
   );
 }
