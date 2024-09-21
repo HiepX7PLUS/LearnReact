@@ -31,13 +31,9 @@ class ModalShoesCartRedux extends Component {
 
   
   render() {
-    console.log(this.props.cart)
+    // console.log(this.props.cart)
     return (
         <div>
-            {/* Button trigger modal */}
-            {/* <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalCartReDuxId">
-                Launch
-            </button> */}
             {/* Modal */}
             <div className="modal modal-lg fade" id="modalCartReDuxId" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                 <div className="modal-dialog" role="document">

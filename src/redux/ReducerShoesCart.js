@@ -10,7 +10,7 @@ const reducerShoesCart = (state = stateCart, action) => {
     switch (action.type){
         case 'ADD_TO_CART' : {
             // Duyệt tìm kiểm tra trong mảng 'cart' đã có object sản phẩm nào trùng với maSP với iteamCart mà 'action' gửi lên không
-            let index = state.cart.findIndex(object => object.maSP === action.itemCartAdapt.maSP);
+            let index = state.cart.findIndex(item => item.maSP === action.itemCartAdapt.maSP);
 
             // Nếu trùng nhau (tức là có sản phẩm đó rồi) -> tăng số lượng
             if (index !== -1){
