@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import '../BaiTapRedux_XucXac/GameXucXac.css'
+import './GameDice.css'
 import Dice from './Dice';
 import DiceMetric from './DiceMetric';
 

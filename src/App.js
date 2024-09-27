@@ -1,6 +1,6 @@
 import './App.css';
 // import ShoesStoreRedux from './BaiTapRedux_Shoes/ShoesStoreRedux';
-import GameXucXac from './BaiTapRedux_XucXac/GameXucXac';
+import GameDice from './BaiTapRedux_Dice/GameDice';
 // import ShoesStore2 from './BaiTapProps/ShoesStore2';
 // import ShoesStore from './Props/ShoesStore';
 
@@ -10,7 +10,7 @@ function App() {
       {/* <ShoesStore/> */}
       {/* <ShoesStore2/> */}
       {/* <ShoesStoreRedux/> */}
-      <GameXucXac/>
+      <GameDice/>
     </div>
   );
 }
