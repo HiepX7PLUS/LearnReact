@@ -24,14 +24,14 @@ class ModalShoesCartRedux extends Component {
 
   // Hàm cộng tổng tiền
   totalAmount = () => {
-    return this.props.cart.reduce((tong,item,index)=>{
+    return this.props.cartShoes.reduce((tong,item,index)=>{
         return tong += item.soLg * item.donGia
     },0).toLocaleString();
   }
 
   
   render() {
-    // console.log(this.props.cart)
+    // console.log(this.props.cartShoes)
     return (
         <div>
             {/* Modal */}
@@ -57,7 +57,7 @@ class ModalShoesCartRedux extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {this.props.cart.map((product, index)=>{
+                                    {this.props.cartShoes.map((product, index)=>{
                                         return <tr className='align-middle' key={index}>
                                             <td> {product.maSP} </td>
                                             <td> <img src={product.hinhAnh} alt={product.tenSP} style={{width:50}} /> </td>
@@ -99,8 +99,8 @@ class ModalShoesCartRedux extends Component {
 // Hàm lấy state redux biến đổi thành props của component
 const mapStateToProps = (state) => { // state ở đây chính là state tổng (rootReducer) của store chứa các state con
     return {
-        // props mới của component (giả sử đặt tên là cart). stateCart là state con (khai báo ở rootReducer.js), cart nằm trong stateCart (setup ở trong ReducerShoesCart.js)
-        cart: state.stateCart.cart
+        // props mới của component (giả sử đặt tên là cartShoes). stateShoes là state con (khai báo ở rootReducer.js), cartShoes nằm trong stateShoes (setup ở trong ReducerShoes.js)
+        cartShoes: state.reducerShoes.cartShoes
     }
 }
 

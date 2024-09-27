@@ -1,14 +1,17 @@
 import {combineReducers} from 'redux'
-import reducerShoesCart from './ReducerShoesCart';
-import reducerShoesDetail from './ReducerShoesDetail';
+import reducerShoes from './ReducerShoes';
+import reducerDice from './ReducerDice';
 
 // store tổng của ứng dụng
 const rootReducer = combineReducers({
     // state giỏ hàng
-    stateCart: reducerShoesCart,
+    reducerShoes,    // Viết tắt của reducerShoes: reducerShoes,
 
     //state detail sản phẩm 
-    stateDetail: reducerShoesDetail
+    // stateDetail: reducerShoesDetail,
+
+    //state Game Xúc Xắc
+    reducerDice     // Viết tắt của reducerDice: reducerDice
 
 })
 

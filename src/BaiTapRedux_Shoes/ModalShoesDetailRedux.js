@@ -6,44 +6,44 @@ import { connect } from 'react-redux'
 class ModalShoesDetailRedux extends Component {
   render() {
     
-    let {detailSP} = this.props;
-    console.log(this.props.detailSP)
+    let {itemShoes} = this.props;
+    console.log(this.props.itemShoes)
     return (
         <div>
             <div className="modal fade" id="modalShoesDetailId" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header bg-light">
-                            <h5 className="modal-title"> {detailSP.tenSP} </h5>
+                            <h5 className="modal-title"> {itemShoes.tenSP} </h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                         </div>
                         <div className="modal-body">
-                        <img src={detailSP.hinhAnh} alt={detailSP.name} />
+                        <img src={itemShoes.hinhAnh} alt={itemShoes.name} />
                                     <table className="table">
                                         <tbody>
                                             <tr>
                                                 <th>ID</th>
-                                                <td>{detailSP.id}</td>
+                                                <td>{itemShoes.id}</td>
                                             </tr>
                                             <tr>
                                                 <th>Sản phẩm</th>
-                                                <td>{detailSP.name}</td>
+                                                <td>{itemShoes.name}</td>
                                             </tr>
                                             <tr>
                                                 <th>Giá</th>
-                                                <td>{detailSP.price}</td>
+                                                <td>{itemShoes.price}</td>
                                             </tr>
                                             <tr>
                                                 <th>Số lượng bán</th>
-                                                <td>{detailSP.quantity}</td>
+                                                <td>{itemShoes.quantity}</td>
                                             </tr>
                                             <tr>
                                                 <th>Mô tả</th>
-                                                <td>{detailSP.description}</td>
+                                                <td>{itemShoes.description}</td>
                                             </tr>
                                         </tbody>
                                     </table>
-                            {/* {detailSP.map((itemSP, index) => {
+                            {/* {itemShoes.map((itemSP, index) => {
                                 return <div className='row' key={index} >
                                     <img src={itemSP.hinhAnh} alt={itemSP.name} />
                                     <table className="table">
@@ -90,7 +90,7 @@ class ModalShoesDetailRedux extends Component {
 // Hàm nhận state từ reducerShoesDetail
 const mapStateToProps = (state) => {
     return {
-        detailSP: state.stateDetail.detailShoes
+        itemShoes: state.reducerShoes.itemShoes
     }
 }
 
